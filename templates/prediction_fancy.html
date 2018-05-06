@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>SVHN Model as a Flask API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1>Image Posterizer</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+     <input type="file" name="image" value="Upload">
+     <input type="submit" value="Predict"> {% if label %} {{ label }} {% endif %}
+</form>
+
+  <div class="results">
+    <div class="image_container">
+      <img src="data:image/png;base64,{{orig_image}}" alt="original image"/>
+      <div class='image_caption'>
+        Original Image
+      </div>
+    </div>
+    <div class="image_container">
+      <img src="data:image/png;base64,{{img_data}}" alt="loading..." />
+      <div class='image_caption'>
+        Posterized Image using {{num_colors}} colors
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

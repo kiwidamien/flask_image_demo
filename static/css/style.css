@@ -1,0 +1,27 @@
+.results {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.image_container{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 45%;
+  border: 3px solid #ADADAD;
+  padding: 15px 5px;
+}
+
+.image_container img{
+  width: 90%;
+  border: 1px solid #FFF;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image_caption{
+  font-size: 20pt;
+  text-align: center;
+}
